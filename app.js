@@ -16,7 +16,7 @@ require("./config/passport")(passport);
 
 app.use(express.urlencoded({ extended: true }));
 // app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 // initialze middleware
 app.use(express.urlencoded({ extended: true }));
@@ -36,5 +36,6 @@ app.use(passport.session());
 // immporting routes
 app.use(require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
+app.use(require("./routes/todo"));
 
 app.listen(PORT, console.log(`listening at ${PORT}`));
